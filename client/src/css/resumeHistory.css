@@ -1,0 +1,145 @@
+/* ===========================
+   Resume History Page
+=========================== */
+
+.resume-history {
+    min-height: 100vh;
+    background: #f5f7fb;
+    padding: 40px;
+}
+
+.resume-history h1 {
+    text-align: center;
+    color: #1e293b;
+    margin-bottom: 35px;
+    font-size: 2.2rem;
+}
+
+/* ===========================
+   Table
+=========================== */
+
+.resume-history table {
+    width: 100%;
+    border-collapse: collapse;
+    background: #ffffff;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 8px 25px rgba(0,0,0,.08);
+}
+
+.resume-history thead {
+    background: #2563eb;
+    color: white;
+}
+
+.resume-history th,
+.resume-history td {
+    padding: 18px;
+    text-align: center;
+}
+
+.resume-history tbody tr {
+    border-bottom: 1px solid #e5e7eb;
+    transition: .3s;
+}
+
+.resume-history tbody tr:hover {
+    background: #f8fafc;
+}
+
+/* ===========================
+   Buttons
+=========================== */
+
+.view-btn,
+.delete-btn,
+.back-btn {
+    border: none;
+    cursor: pointer;
+    border-radius: 8px;
+    font-weight: bold;
+    transition: .3s;
+}
+
+/* View */
+
+.view-btn {
+    background: #2563eb;
+    color: white;
+    padding: 8px 16px;
+    margin-right: 8px;
+}
+
+.view-btn:hover {
+    background: #1d4ed8;
+}
+
+/* Delete */
+
+.delete-btn {
+    background: #ef4444;
+    color: white;
+    padding: 8px 16px;
+}
+
+.delete-btn:hover {
+    background: #dc2626;
+}
+
+/* Back */
+
+.back-btn {
+    display: block;
+    margin: 35px auto 0;
+    padding: 12px 28px;
+    background: #16a34a;
+    color: white;
+    font-size: 16px;
+}
+
+.back-btn:hover {
+    background: #15803d;
+}
+
+/* ===========================
+   Empty Text
+=========================== */
+
+.resume-history p {
+    text-align: center;
+    color: #64748b;
+    font-size: 18px;
+}
+
+/* ===========================
+   Responsive
+=========================== */
+
+@media (max-width: 768px) {
+
+    .resume-history {
+        padding: 20px;
+    }
+
+    .resume-history table {
+        display: block;
+        overflow-x: auto;
+        white-space: nowrap;
+    }
+
+    .resume-history h1 {
+        font-size: 1.8rem;
+    }
+
+    .view-btn,
+    .delete-btn {
+        padding: 6px 12px;
+        font-size: 14px;
+    }
+
+    .back-btn {
+        width: 100%;
+    }
+
+}

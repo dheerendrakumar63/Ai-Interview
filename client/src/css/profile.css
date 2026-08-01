@@ -1,0 +1,363 @@
+/* ===========================
+   Profile Container
+=========================== */
+
+.profile-container {
+    min-height: 100vh;
+    background: linear-gradient(135deg, #0f172a, #1e293b);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 40px 20px;
+}
+
+/* ===========================
+   Profile Card
+=========================== */
+
+.profile-card {
+    width: 100%;
+    max-width: 950px;
+    background: rgba(255,255,255,0.08);
+    backdrop-filter: blur(20px);
+    border-radius: 20px;
+    padding: 35px;
+    border: 1px solid rgba(255,255,255,.15);
+    box-shadow: 0 15px 40px rgba(0,0,0,.35);
+}
+
+/* ===========================
+   Header
+=========================== */
+
+.profile-header{
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    margin-bottom:30px;
+}
+
+.avatar{
+    width:110px;
+    height:110px;
+    border-radius:50%;
+    background:#3b82f6;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:50px;
+    color:#fff;
+    margin-bottom:15px;
+}
+
+.profile-header h1{
+    color:#fff;
+    font-size:32px;
+    font-weight:bold;
+}
+
+/* ===========================
+   User Info
+=========================== */
+
+.profile-info{
+    background:rgba(255,255,255,.05);
+    padding:25px;
+    border-radius:15px;
+    margin-bottom:30px;
+}
+
+.info-row{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    margin:18px 0;
+    color:#fff;
+}
+
+.info-row span{
+    font-weight:600;
+}
+
+.info-row strong{
+    color:#38bdf8;
+}
+
+.info-row input{
+    width:280px;
+    padding:10px;
+    border:none;
+    outline:none;
+    border-radius:10px;
+    background:#fff;
+    font-size:15px;
+}
+/* ===========================
+   Change Password Card
+=========================== */
+
+.password-card{
+    margin-top:30px;
+    padding:25px;
+    border-radius:15px;
+    background:rgba(255,255,255,.05);
+    border:1px solid rgba(255,255,255,.12);
+}
+
+.password-card h2{
+    color:#fff;
+    margin-bottom:20px;
+    text-align:center;
+}
+
+.password-card input{
+    width:100%;
+    padding:14px;
+    margin-bottom:15px;
+    border:none;
+    outline:none;
+    border-radius:10px;
+    font-size:15px;
+    background:#fff;
+    box-sizing:border-box;
+}
+
+.password-buttons{
+    display:flex;
+    gap:15px;
+    margin-top:10px;
+}
+
+.save-password-btn,
+.cancel-password-btn{
+    flex:1;
+    padding:14px;
+    border:none;
+    border-radius:10px;
+    cursor:pointer;
+    font-size:15px;
+    font-weight:bold;
+    transition:.3s;
+}
+
+.save-password-btn{
+    background:#22c55e;
+    color:#fff;
+}
+
+.save-password-btn:hover{
+    background:#16a34a;
+}
+
+.cancel-password-btn{
+    background:#ef4444;
+    color:#fff;
+}
+
+.cancel-password-btn:hover{
+    background:#dc2626;
+}
+
+/* ===========================
+   Statistics
+=========================== */
+
+.stats-title{
+    color:#fff;
+    margin:35px 0 20px;
+    text-align:center;
+    font-size:28px;
+}
+
+.stats-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(170px,1fr));
+    gap:20px;
+}
+
+.stat-box{
+    background: rgba(255,255,255,.08);
+
+    padding:22px;
+    border-radius:15px;
+    text-align:center;
+    transition:.3s;
+    border:1px solid rgba(255,255,255,.08);
+}
+
+.stat-box:hover{
+    transform:translateY(-5px);
+    box-shadow:0 10px 20px rgba(0,0,0,.25);
+     background: rgba(59,130,246,.12);
+}
+
+.stat-box h3{
+    color:#cbd5e1;
+    margin-bottom:12px;
+    font-size:16px;
+}
+
+.stat-box h1{
+    color:#38bdf8;
+    font-size:32px;
+}
+/* ===========================
+   Profile Buttons
+=========================== */
+
+.profile-buttons{
+    margin-top:35px;
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+    gap:18px;
+}
+
+.profile-buttons button{
+    padding:14px;
+    border:none;
+    border-radius:12px;
+    cursor:pointer;
+    font-size:16px;
+    font-weight:600;
+    transition:all .3s ease;
+    color:#fff;
+}
+
+/* ===========================
+   Edit Button
+=========================== */
+
+.edit-btn{
+    background:linear-gradient(135deg,#3b82f6,#2563eb);
+}
+
+.edit-btn:hover{
+    transform:translateY(-3px);
+    box-shadow:0 10px 20px rgba(37,99,235,.35);
+}
+
+/* ===========================
+   Password Button
+=========================== */
+
+.password-btn{
+    background:linear-gradient(135deg,#8b5cf6,#7c3aed);
+}
+
+.password-btn:hover{
+    transform:translateY(-3px);
+    box-shadow:0 10px 20px rgba(124,58,237,.35);
+}
+
+/* ===========================
+   History Button
+=========================== */
+
+.history-btn{
+    background:linear-gradient(135deg,#06b6d4,#0891b2);
+}
+
+.history-btn:hover{
+    transform:translateY(-3px);
+    box-shadow:0 10px 20px rgba(8,145,178,.35);
+}
+
+/* ===========================
+   Dashboard Button
+=========================== */
+
+.dashboard-btn{
+    background:linear-gradient(135deg,#10b981,#059669);
+}
+
+.dashboard-btn:hover{
+    transform:translateY(-3px);
+    box-shadow:0 10px 20px rgba(5,150,105,.35);
+}
+
+/* ===========================
+   Logout Button
+=========================== */
+
+.logout-btn{
+    background:linear-gradient(135deg,#ef4444,#dc2626);
+}
+
+.logout-btn:hover{
+    transform:translateY(-3px);
+    box-shadow:0 10px 20px rgba(220,38,38,.35);
+}
+
+/* ===========================
+   Disabled Buttons
+=========================== */
+
+button:disabled{
+    opacity:.7;
+    cursor:not-allowed;
+    transform:none;
+}
+
+/* ===========================
+   Responsive Design
+=========================== */
+
+@media (max-width:768px){
+
+    .profile-card{
+        padding:20px;
+    }
+
+    .avatar{
+        width:90px;
+        height:90px;
+        font-size:40px;
+    }
+
+    .profile-header h1{
+        font-size:26px;
+    }
+
+    .info-row{
+        flex-direction:column;
+        align-items:flex-start;
+        gap:10px;
+    }
+
+    .info-row input{
+        width:100%;
+    }
+
+    .stats-grid{
+        grid-template-columns:1fr;
+    }
+
+    .profile-buttons{
+        grid-template-columns:1fr;
+    }
+
+    .password-buttons{
+        flex-direction:column;
+    }
+}
+
+/* ===========================
+   Scrollbar
+=========================== */
+
+::-webkit-scrollbar{
+    width:8px;
+}
+
+::-webkit-scrollbar-track{
+    background:#0f172a;
+}
+
+::-webkit-scrollbar-thumb{
+    background:#3b82f6;
+    border-radius:10px;
+}
+
+::-webkit-scrollbar-thumb:hover{
+    background:#2563eb;
+}
