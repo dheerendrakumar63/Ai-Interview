@@ -1,5 +1,5 @@
 const { analyzeResume } = require("../services/geminiService");
-const fs = require("fs");
+
 const pdfParse = require("pdf-parse");
 
 const Resume = require("../models/Resume");
@@ -18,11 +18,9 @@ exports.uploadResume = async (req, res) => {
             });
         }
 
-        const pdfPath = req.file.path;
+        const pdfData = await pdfParse(req.file.buffer);
 
-        const pdfBuffer = fs.readFileSync(pdfPath);
-
-        const pdfData = await pdfParse(pdfBuffer);
+         const resumeText = pdfData.text;
 
         const resumeText = pdfData.text;
 
@@ -32,7 +30,7 @@ exports.uploadResume = async (req, res) => {
 
             user: req.user.id,
 
-            fileName: req.file.filename,
+            fileName: req.file.originalname,
 
             score: analysis.score,
 
