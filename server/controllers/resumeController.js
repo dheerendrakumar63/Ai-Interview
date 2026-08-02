@@ -1,3 +1,5 @@
+console.log("🚀 MEMORY STORAGE CONTROLLER RUNNING");
+
 const { analyzeResume } = require("../services/geminiService");
 
 const pdfParse = require("pdf-parse");
@@ -11,6 +13,9 @@ const Resume = require("../models/Resume");
 exports.uploadResume = async (req, res) => {
 
     try {
+        console.log("File Object:", req.file);
+       console.log("Buffer Exists:", !!req.file?.buffer);
+       console.log("Original Name:", req.file?.originalname);
 
         if (!req.file) {
             return res.status(400).json({
@@ -22,7 +27,7 @@ exports.uploadResume = async (req, res) => {
 
          const resumeText = pdfData.text;
 
-        const resumeText = pdfData.text;
+        
 
         const analysis = await analyzeResume(resumeText);
 
