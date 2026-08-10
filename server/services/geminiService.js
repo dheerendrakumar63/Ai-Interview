@@ -46,17 +46,29 @@ async function callGemini(prompt, retries = 3) {
 }
 
 // =============================
+// =============================
 // Generate Interview Questions
 // =============================
 const generateInterviewQuestions = async (
+    category,
     role,
     experience,
     techStack,
+    difficulty,
     numberOfQuestions
 ) => {
 
-    const prompt = `
-Generate ${numberOfQuestions} interview questions.
+    let prompt = "";
+
+    // =============================
+    // Technical Interview
+    // =============================
+    if (category === "Technical") {
+
+        prompt = `
+Generate ${numberOfQuestions} ${difficulty} level interview questions.
+
+Category: ${category}
 
 Role: ${role}
 
@@ -64,23 +76,65 @@ Experience: ${experience}
 
 Tech Stack: ${techStack.join(", ")}
 
+You are a senior technical interviewer.
+
+Questions should be based on the given role and technologies.
+
 Return ONLY valid JSON.
 
 Example:
 
 [
-  {
-    "question":"What is React?",
-    "answer":"React is a JavaScript library for building user interfaces."
-  },
-  {
-    "question":"What is useState?",
-    "answer":"useState is a React Hook used to manage state."
-  }
+    {
+        "question":"What is React?",
+        "answer":"React is a JavaScript library for building user interfaces."
+    },
+    {
+        "question":"Explain Express.js middleware.",
+        "answer":"Middleware functions execute during request-response cycle."
+    }
 ]
 `;
 
-    let text = await callGemini(prompt);
+    }
+
+    // =============================
+    // Non Technical Interview
+    // =============================
+    else {
+
+        prompt = `
+Generate ${numberOfQuestions} ${difficulty} level interview questions.
+
+Category: ${category}
+
+Role: ${role}
+
+Experience: ${experience}
+
+You are an HR interviewer.
+
+Generate interview questions related ONLY to this job role.
+
+Do NOT ask programming questions.
+
+Return ONLY valid JSON.
+
+Example:
+
+[
+    {
+        "question":"How do you convince a customer to buy your product?",
+        "answer":"By understanding customer needs and explaining product benefits."
+    },
+    {
+        "question":"How do you handle customer objections?",
+        "answer":"Listen carefully, understand concerns and provide suitable solutions."
+    }
+]
+`;
+
+    }    let text = await callGemini(prompt);
 
     text = text
         .replace(/```json/g, "")
@@ -88,6 +142,7 @@ Example:
         .trim();
 
     return JSON.parse(text);
+
 };
 
 // =============================

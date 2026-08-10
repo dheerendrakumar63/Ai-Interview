@@ -220,6 +220,14 @@ function Dashboard() {
                         📄 Resume Analyzer
                     </button>
 
+                     {/* <button
+                        onClick={() =>
+                            navigate("/")
+                        }
+                    >
+                        📄 Add resume
+                    </button> */}
+
                     <button
                         onClick={() =>
                             navigate("/resume-history")

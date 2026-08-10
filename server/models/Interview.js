@@ -46,6 +46,13 @@ const interviewSchema = new mongoose.Schema(
             required: true,
         },
 
+        // Interview Category
+category: {
+    type: String,
+    enum: ["Technical", "Non-Technical"],
+    required: true,
+},
+
         // Job Role
         role: {
             type: String,
