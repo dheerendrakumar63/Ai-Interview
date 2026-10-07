@@ -1,0 +1,499 @@
+/* =========================================
+   Main Page
+========================================= */
+
+.resume-page {
+    min-height: 100vh;
+
+    background: #f5f7fb;
+
+    display: grid;
+
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+
+    gap: 30px;
+
+    padding: 40px;
+
+    box-sizing: border-box;
+
+    align-items: start;
+}
+
+
+/* =========================================
+   Left Side
+========================================= */
+
+.resume-container {
+    width: 100%;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: flex-start;
+
+    min-width: 0;
+}
+
+
+/* =========================================
+   Add Resume Card
+========================================= */
+
+.resume-card {
+    width: 100%;
+
+    max-width: none;
+
+    background: white;
+
+    padding: 35px;
+
+    border-radius: 15px;
+
+    box-shadow:
+        0 4px 20px rgba(0, 0, 0, 0.08);
+
+    box-sizing: border-box;
+}
+
+
+/* =========================================
+   Heading
+========================================= */
+
+.resume-card h1 {
+    text-align: center;
+
+    margin-top: 0;
+
+    margin-bottom: 8px;
+
+    color: #222;
+
+    font-size: 32px;
+}
+
+
+.subtitle {
+    text-align: center;
+
+    color: #777;
+
+    margin-top: 0;
+
+    margin-bottom: 30px;
+}
+
+
+/* =========================================
+   Form
+========================================= */
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+
+.form-group label {
+    display: block;
+
+    margin-bottom: 8px;
+
+    font-size: 16px;
+
+    font-weight: 600;
+
+    color: #333;
+}
+
+
+/* =========================================
+   Inputs
+========================================= */
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+
+    box-sizing: border-box;
+
+    padding: 12px 14px;
+
+    border: 1px solid #d5d9e2;
+
+    border-radius: 8px;
+
+    font-size: 15px;
+
+    outline: none;
+
+    transition: 0.2s;
+
+    background: white;
+}
+
+
+.form-group input:focus,
+.form-group textarea:focus {
+    border-color: #2864e8;
+
+    box-shadow:
+        0 0 0 2px rgba(40, 100, 232, 0.1);
+}
+
+
+/* =========================================
+   Textarea
+========================================= */
+
+.form-group textarea {
+    min-height: 20px;
+
+    resize: vertical;
+
+    font-family: inherit;
+}
+
+
+/* =========================================
+   File Input
+========================================= */
+
+.form-group input[type="file"] {
+    padding: 10px;
+
+    background: #f8f9fc;
+
+    cursor: pointer;
+}
+
+
+/* =========================================
+   Add Resume Button
+========================================= */
+
+.resume-btn {
+    width: 100%;
+
+    padding: 13px;
+
+    border: none;
+
+    border-radius: 8px;
+
+    background: #2864e8;
+
+    color: white;
+
+    font-size: 16px;
+
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition: 0.2s;
+}
+
+
+.resume-btn:hover {
+    background: #1854d1;
+}
+
+
+.resume-btn:disabled {
+    background: #9aaee0;
+
+    cursor: not-allowed;
+}
+
+
+/* =========================================
+   Right Side - Saved Resumes
+========================================= */
+
+.saved-resumes {
+    width: 100%;
+
+    min-width: 0;
+
+    background: white;
+
+    padding: 30px;
+
+    border-radius: 15px;
+
+    box-shadow:
+        0 4px 20px rgba(0, 0, 0, 0.08);
+
+    box-sizing: border-box;
+
+    max-height: calc(100vh - 80px);
+
+    overflow-y: auto;
+
+    position: sticky;
+
+    top: 20px;
+}
+
+
+/* =========================================
+   My Resumes Heading
+========================================= */
+
+.saved-resumes h2 {
+    margin-top: 0;
+
+    margin-bottom: 25px;
+
+    color: #222;
+
+    font-size: 28px;
+}
+
+
+/* =========================================
+   Individual Resume
+========================================= */
+
+.resume-item {
+    border: 1px solid #e0e4ec;
+
+    border-radius: 12px;
+
+    padding: 20px;
+
+    margin-bottom: 20px;
+
+    background: #fafbfe;
+
+    transition: 0.2s;
+
+    box-sizing: border-box;
+}
+
+
+.resume-item:hover {
+    box-shadow:
+        0 4px 15px rgba(0, 0, 0, 0.07);
+
+    transform: translateY(-2px);
+}
+
+
+.resume-item h3 {
+    margin-top: 0;
+
+    margin-bottom: 15px;
+
+    color: #222;
+
+    font-size: 20px;
+}
+
+
+.resume-item p {
+    margin: 8px 0;
+
+    color: #555;
+
+    font-size: 14px;
+
+    line-height: 1.5;
+
+    word-break: break-word;
+}
+
+
+/* =========================================
+   Delete Button
+========================================= */
+
+.delete-resume-btn {
+    margin-top: 12px;
+
+    padding: 9px 16px;
+
+    border: none;
+
+    border-radius: 7px;
+
+    background: #dc3545;
+
+    color: white;
+
+    font-size: 14px;
+
+    cursor: pointer;
+
+    transition: 0.2s;
+}
+
+
+.delete-resume-btn:hover {
+    background: #b02a37;
+}
+
+
+/* =========================================
+   Empty Resume
+========================================= */
+
+.empty-resume {
+    padding: 50px 20px;
+
+    text-align: center;
+
+    color: #777;
+}
+
+
+.empty-resume p {
+    margin: 0;
+
+    font-size: 16px;
+}
+
+
+/* =========================================
+   Responsive - Tablet
+========================================= */
+
+@media (max-width: 1000px) {
+
+    .resume-page {
+        grid-template-columns: 1fr;
+
+        padding: 30px 20px;
+
+        gap: 25px;
+    }
+
+
+    .resume-card {
+        max-width: none;
+    }
+
+
+    .saved-resumes {
+        position: static;
+
+        max-height: none;
+    }
+}
+
+
+/* =========================================
+   Responsive - Mobile
+========================================= */
+
+@media (max-width: 600px) {
+
+    .resume-page {
+        padding: 20px 12px;
+
+        gap: 20px;
+    }
+
+
+    .resume-card {
+        padding: 25px 20px;
+    }
+
+
+    .resume-card h1 {
+        font-size: 26px;
+    }
+
+
+    .saved-resumes {
+        padding: 20px;
+    }
+
+
+    .saved-resumes h2 {
+        font-size: 24px;
+    }
+}
+
+/* =========================================
+   Resume Action Buttons
+========================================= */
+
+.resume-actions {
+    display: flex;
+    gap: 12px;
+    margin-top: 10px;
+}
+
+.resume-actions .resume-btn {
+    flex: 1;
+}
+
+.cancel-btn {
+    flex: 0 0 120px;
+
+    padding: 13px;
+
+    border: none;
+
+    border-radius: 8px;
+
+    background: #6c757d;
+
+    color: white;
+
+    font-size: 16px;
+
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition: 0.2s;
+}
+
+.cancel-btn:hover {
+    background: #5c636a;
+}
+
+
+/* =========================================
+   Bootstrap Table
+========================================= */
+
+.saved-resumes {
+    overflow-x: auto;
+}
+
+.saved-resumes .table {
+    margin-bottom: 0;
+}
+
+.saved-resumes .table th {
+    white-space: nowrap;
+}
+
+.saved-resumes .table td {
+    vertical-align: middle;
+}
+
+
+/* =========================================
+   Mobile
+========================================= */
+
+@media (max-width: 600px) {
+
+    .resume-actions {
+        flex-direction: column;
+    }
+
+    .cancel-btn {
+        flex: 1;
+        width: 100%;
+    }
+
+}

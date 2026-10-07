@@ -14,6 +14,9 @@ import ResumeReport from "./pages/ResumeReport";
 import VideoInterview from "./pages/VideoInterview";
 import { Toaster } from "react-hot-toast";
 
+import NewPage from "./pages/newPage";
+import ProtectedRoute from "./components/ProtectedRoute";
+
 function App() {
   return (
     <>
@@ -36,7 +39,14 @@ function App() {
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
 
-        <Route path="/dashboard" element={<Dashboard />} />
+        <Route
+    path="/dashboard"
+    element={
+        <ProtectedRoute>
+            <Dashboard />
+        </ProtectedRoute>
+    }
+/>
         <Route path="/create-interview" element={<CreateInterview />} />
         <Route path="/interview/:id" element={<Interview />} />
         <Route path="/result/:id" element={<Result />} />
@@ -49,6 +59,8 @@ function App() {
           path="/video-interview/:id"
           element={<VideoInterview />}
         />
+
+        <Route path="/newPage" element={<NewPage />} />
       </Routes>
     </>
   );

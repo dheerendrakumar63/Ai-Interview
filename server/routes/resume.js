@@ -3,161 +3,103 @@ const express = require("express");
 const router = express.Router();
 
 
-// ==========================================
-// Middleware
-// ==========================================
-
-const protect =
-    require("../middleware/authMiddleware");
-
-const upload =
-    require("../middleware/uploadMiddleware");
-
-
-// ==========================================
-// Controller
-// ==========================================
-
+// Controllers
 const {
-
     uploadResume,
-
     createResume,
-
-    updateResume,
-
     getResumeHistory,
-
     getMyResumes,
-
     getResumeById,
-
     deleteResume,
-
     getResumeStats,
-
+     updateResume
 } = require("../controllers/resumeController");
 
 
-// ==========================================
-// 1. Resume Analyzer
-// ==========================================
+// Authentication
+const { protect } = require("../middleware/auth");
 
-// PDF upload + Gemini AI analysis
+
+// Multer
+const upload = require("../middleware/upload");
+
+
+// ==========================================
+// Resume Analyzer
+// ==========================================
 
 router.post(
-
     "/upload",
-
     protect,
-
     upload.single("resume"),
-
     uploadResume
-
 );
 
 
 // ==========================================
-// 2. Add Resume
+// Add Resume
 // ==========================================
-
-// Add Resume form data + optional PDF
 
 router.post(
-
     "/create",
-
     protect,
-
     upload.single("resume"),
-
     createResume
-
-);
-// ==========================================
-// Update Resume
-// ==========================================
-
-router.put(
-    "/:id",
-    protect,
-    upload.single("resume"),
-    updateResume
 );
 
+
 // ==========================================
-// 3. Resume History
+// Resume History
 // ==========================================
 
 router.get(
-
-    "/",
-
+    "/history",
     protect,
-
     getResumeHistory
-
 );
 
 
 // ==========================================
-// 4. My Resumes
+// My Resumes
 // ==========================================
 
 router.get(
-
     "/my-resumes",
-
     protect,
-
     getMyResumes
-
 );
 
 
 // ==========================================
-// 5. Resume Stats
+// Resume Stats
 // ==========================================
 
 router.get(
-
     "/stats",
-
     protect,
-
     getResumeStats
-
 );
 
 
 // ==========================================
-// 6. Single Resume
+// Single Resume
 // ==========================================
 
 router.get(
-
     "/:id",
-
     protect,
-
     getResumeById
-
 );
 
 
 // ==========================================
-// 7. Delete Resume
+// Delete Resume
 // ==========================================
 
 router.delete(
-
     "/:id",
-
     protect,
-
     deleteResume
-
 );
 
 

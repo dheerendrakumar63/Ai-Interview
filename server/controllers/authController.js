@@ -9,7 +9,15 @@ exports.register = async (req, res) => {
     try {
         const { name, email, password } = req.body;
 
-        const userExist = await User.findOne({ email });
+        if (!name || !email || !password) {
+            return res.status(400).json({
+                message: "Name, email and password are required"
+            });
+        }
+
+        const normalizedEmail = email.trim().toLowerCase();
+
+        const userExist = await User.findOne({ email: normalizedEmail });
 
         if (userExist) {
             return res.status(400).json({
@@ -20,8 +28,8 @@ exports.register = async (req, res) => {
         const hashPassword = await bcrypt.hash(password, 10);
 
         const user = await User.create({
-            name,
-            email,
+            name: name.trim(),
+            email: normalizedEmail,
             password: hashPassword
         });
 
@@ -46,10 +54,19 @@ exports.register = async (req, res) => {
 // =======================
 exports.login = async (req, res) => {
     try {
-
         const { email, password } = req.body;
 
-        const user = await User.findOne({ email });
+        if (!email || !password) {
+            return res.status(400).json({
+                message: "Email and password are required"
+            });
+        }
+
+        const normalizedEmail = email.trim().toLowerCase();
+        console.log("Login email received:", !!normalizedEmail);
+
+        const user = await User.findOne({ email: normalizedEmail });
+        console.log("User found:", !!user);
 
         if (!user) {
             return res.status(404).json({
@@ -57,7 +74,14 @@ exports.login = async (req, res) => {
             });
         }
 
+        if (!user.password) {
+            return res.status(401).json({
+                message: "Invalid Password"
+            });
+        }
+
         const match = await bcrypt.compare(password, user.password);
+        console.log("Password match:", match);
 
         if (!match) {
             return res.status(401).json({
