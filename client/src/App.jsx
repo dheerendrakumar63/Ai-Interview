@@ -14,6 +14,7 @@ import ResumeReport from "./pages/ResumeReport";
 import VideoInterview from "./pages/VideoInterview";
 import { Toaster } from "react-hot-toast";
 
+import Home from "./pages/Home";
 import NewPage from "./pages/newPage";
 import ProtectedRoute from "./components/ProtectedRoute";
 
@@ -34,7 +35,8 @@ function App() {
       />
 
       <Routes>
-        <Route path="/" element={<Navigate to="/login" />} />
+        <Route path="/" element={<Home />} />
+        <Route path="/home" element={<Home />} />
 
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />

@@ -1,0 +1,403 @@
+/* ==========================================================================
+   BULLETPROOF LANDING PAGE STYLES (NO TREMBLING / NO JITTER / NO SHAKING)
+   ========================================================================== */
+
+@import "tailwindcss";
+
+html {
+  scroll-behavior: smooth;
+  overflow-x: hidden !important;
+  scrollbar-gutter: stable !important;
+}
+
+body {
+  overflow-x: hidden !important;
+  width: 100% !important;
+  max-width: 100vw !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+#root {
+  overflow-x: hidden !important;
+  width: 100% !important;
+  max-width: 100vw !important;
+}
+
+/* Base Isolation */
+.landing-container {
+  font-family: 'Plus Jakarta Sans', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif !important;
+  background-color: #F8FAFC !important;
+  color: #0F172A !important;
+  width: 100% !important;
+  max-width: 100vw !important;
+  min-height: 100vh !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  text-align: left !important;
+  box-sizing: border-box !important;
+  overflow-x: hidden !important;
+  position: relative !important;
+}
+
+.landing-container *,
+.landing-container *::before,
+.landing-container *::after {
+  box-sizing: border-box !important;
+}
+
+/* Ensure Sections & Main Stack Vertically without Overlap or Shaking */
+.landing-container main {
+  display: flex !important;
+  flex-direction: column !important;
+  width: 100% !important;
+  position: relative !important;
+  overflow-x: hidden !important;
+}
+
+.landing-container section {
+  display: block !important;
+  position: relative !important;
+  width: 100% !important;
+  clear: both !important;
+  margin: 0 !important;
+  overflow-x: hidden !important;
+}
+
+.landing-container footer {
+  display: block !important;
+  position: relative !important;
+  width: 100% !important;
+  clear: both !important;
+  overflow-x: hidden !important;
+}
+
+.landing-container a {
+  text-decoration: none !important;
+  color: inherit;
+}
+
+.landing-container h1,
+.landing-container h2,
+.landing-container h3,
+.landing-container h4,
+.landing-container h5,
+.landing-container h6 {
+  margin: 0 !important;
+  font-family: inherit !important;
+  font-weight: inherit !important;
+  line-height: 1.2 !important;
+  color: inherit !important;
+}
+
+.landing-container p {
+  margin: 0 !important;
+}
+
+.landing-container button {
+  outline: none !important;
+  background: none;
+  border: none;
+  box-shadow: none;
+}
+
+/* ==========================================================================
+   STICKY NAVBAR (In Normal Flow - Eliminates Overlap)
+   ========================================================================== */
+.landing-navbar {
+  position: sticky !important;
+  top: 0 !important;
+  left: 0 !important;
+  right: 0 !important;
+  width: 100% !important;
+  z-index: 1000 !important;
+  background-color: rgba(255, 255, 255, 0.95) !important;
+  backdrop-filter: blur(16px) !important;
+  -webkit-backdrop-filter: blur(16px) !important;
+  border-bottom: 1px solid rgba(226, 232, 240, 0.8) !important;
+  padding: 0.85rem 1.5rem !important;
+  transition: background-color 0.2s ease, border-color 0.2s ease !important;
+  will-change: transform;
+}
+
+.landing-navbar-inner {
+  max-width: 1280px !important;
+  margin: 0 auto !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  gap: 1.5rem !important;
+}
+
+.landing-nav-links {
+  display: none !important;
+  align-items: center !important;
+  gap: 2rem !important;
+}
+
+@media (min-width: 768px) {
+  .landing-nav-links {
+    display: flex !important;
+  }
+}
+
+.landing-nav-link {
+  font-size: 0.875rem !important;
+  font-weight: 600 !important;
+  color: #475569 !important;
+  transition: color 0.15s ease !important;
+}
+
+.landing-nav-link:hover {
+  color: #2563EB !important;
+}
+
+.landing-nav-actions {
+  display: none !important;
+  align-items: center !important;
+  gap: 1rem !important;
+}
+
+@media (min-width: 768px) {
+  .landing-nav-actions {
+    display: flex !important;
+  }
+}
+
+/* ==========================================================================
+   HERO SECTION
+   ========================================================================== */
+.hero-section {
+  position: relative !important;
+  padding: 3.5rem 1.5rem 5rem 1.5rem !important;
+  background: linear-gradient(180deg, #F8FAFC 0%, #FFFFFF 60%, #F8FAFC 100%) !important;
+  overflow: hidden !important;
+}
+
+@media (min-width: 1024px) {
+  .hero-section {
+    padding: 5rem 2rem 6rem 2rem !important;
+  }
+}
+
+.hero-container {
+  max-width: 1280px !important;
+  margin: 0 auto !important;
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 3.5rem !important;
+}
+
+@media (min-width: 1024px) {
+  .hero-container {
+    display: grid !important;
+    grid-template-columns: 1fr 1fr !important;
+    align-items: center !important;
+    gap: 4rem !important;
+  }
+}
+
+.hero-left {
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: flex-start !important;
+  text-align: left !important;
+  gap: 1.5rem !important;
+}
+
+.hero-right {
+  position: relative !important;
+  width: 100% !important;
+  max-width: 560px !important;
+  margin: 0 auto !important;
+}
+
+/* Hero Badge */
+.hero-pill-badge {
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 0.5rem !important;
+  padding: 0.4rem 1rem !important;
+  border-radius: 9999px !important;
+  background-color: #EFF6FF !important;
+  border: 1px solid #BFDBFE !important;
+  color: #1D4ED8 !important;
+  font-size: 0.75rem !important;
+  font-weight: 700 !important;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05) !important;
+}
+
+/* Hero Title & Subtitle */
+.hero-headline {
+  font-size: 2.5rem !important;
+  font-weight: 900 !important;
+  letter-spacing: -0.03em !important;
+  color: #0F172A !important;
+  line-height: 1.15 !important;
+}
+
+@media (min-width: 640px) {
+  .hero-headline {
+    font-size: 3.25rem !important;
+  }
+}
+
+@media (min-width: 1024px) {
+  .hero-headline {
+    font-size: 3.75rem !important;
+  }
+}
+
+.hero-subheadline {
+  font-size: 1.125rem !important;
+  color: #475569 !important;
+  font-weight: 400 !important;
+  line-height: 1.625 !important;
+  max-width: 36rem !important;
+}
+
+/* Gradient Text */
+.gradient-text {
+  background: linear-gradient(135deg, #2563EB 0%, #3B82F6 40%, #7C3AED 100%) !important;
+  -webkit-background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
+  display: inline-block !important;
+}
+
+.gradient-text-purple {
+  background: linear-gradient(135deg, #7C3AED 0%, #A855F7 100%) !important;
+  -webkit-background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
+  display: inline-block !important;
+}
+
+/* Trust Stats Row */
+.hero-stats-row {
+  display: grid !important;
+  grid-template-columns: repeat(3, 1fr) !important;
+  gap: 1.5rem !important;
+  width: 100% !important;
+  padding-top: 1.5rem !important;
+  border-top: 1px solid #E2E8F0 !important;
+}
+
+/* ==========================================================================
+   PREVIEW CARD BOX
+   ========================================================================== */
+.preview-card-box {
+  background-color: #FFFFFF !important;
+  border-radius: 1.5rem !important;
+  border: 1px solid #E2E8F0 !important;
+  box-shadow: 0 25px 50px -12px rgba(15, 23, 42, 0.18) !important;
+  padding: 1.5rem !important;
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 1.25rem !important;
+  text-align: left !important;
+  position: relative !important;
+  will-change: transform;
+}
+
+/* GPU Hardware-Accelerated Scale Animation (Zero Reflow / Zero Jitter) */
+@keyframes wavePulseGPU {
+  0%, 100% {
+    transform: scaleY(0.3);
+  }
+  50% {
+    transform: scaleY(1);
+  }
+}
+
+.audio-bar {
+  width: 4px !important;
+  height: 18px !important;
+  background-color: #3B82F6 !important;
+  border-radius: 9999px !important;
+  display: inline-block !important;
+  transform-origin: bottom !important;
+  animation: wavePulseGPU 1.2s ease-in-out infinite !important;
+  will-change: transform !important;
+}
+
+.audio-bar:nth-child(2) { animation-delay: 0.15s !important; background-color: #60A5FA !important; }
+.audio-bar:nth-child(3) { animation-delay: 0.3s !important; background-color: #818CF8 !important; }
+.audio-bar:nth-child(4) { animation-delay: 0.45s !important; background-color: #A78BFA !important; }
+.audio-bar:nth-child(5) { animation-delay: 0.6s !important; background-color: #3B82F6 !important; }
+
+/* ==========================================================================
+   GRID LAYOUTS FOR SECTIONS
+   ========================================================================== */
+.landing-grid-2 {
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 2.5rem !important;
+}
+
+@media (min-width: 1024px) {
+  .landing-grid-2 {
+    display: grid !important;
+    grid-template-columns: 1fr 1fr !important;
+    align-items: center !important;
+    gap: 3.5rem !important;
+  }
+}
+
+.landing-grid-3 {
+  display: grid !important;
+  grid-template-columns: 1fr !important;
+  gap: 2rem !important;
+}
+
+@media (min-width: 768px) {
+  .landing-grid-3 {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+}
+
+@media (min-width: 1024px) {
+  .landing-grid-3 {
+    grid-template-columns: repeat(3, 1fr) !important;
+  }
+}
+
+.landing-grid-4 {
+  display: grid !important;
+  grid-template-columns: 1fr !important;
+  gap: 1.5rem !important;
+}
+
+@media (min-width: 640px) {
+  .landing-grid-4 {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+}
+
+@media (min-width: 1024px) {
+  .landing-grid-4 {
+    grid-template-columns: repeat(4, 1fr) !important;
+  }
+}
+
+.landing-grid-5 {
+  display: grid !important;
+  grid-template-columns: 1fr !important;
+  gap: 2.5rem !important;
+}
+
+@media (min-width: 768px) {
+  .landing-grid-5 {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+}
+
+@media (min-width: 1024px) {
+  .landing-grid-5 {
+    grid-template-columns: 2fr 1fr 1fr 1fr !important;
+  }
+}
+
+/* Background Grid Pattern */
+.bg-grid-pattern {
+  background-image: radial-gradient(rgba(37, 99, 235, 0.12) 1px, transparent 1px);
+  background-size: 24px 24px;
+}
